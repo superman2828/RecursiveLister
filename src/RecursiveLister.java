@@ -41,14 +41,13 @@ public class RecursiveLister extends JFrame implements ActionListener {
         add(displayPnl, BorderLayout.CENTER);
         add(buttonPnl, BorderLayout.SOUTH);
 
-        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-
         setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == startBtn) {
+            fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
             int result = fileChooser.showOpenDialog(this);
             if (result == JFileChooser.APPROVE_OPTION) {
                 File selectedFile = fileChooser.getSelectedFile();
